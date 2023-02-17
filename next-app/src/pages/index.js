@@ -1,6 +1,9 @@
+import CoffeeChat from "@/components/CoffeeChat/CoffeeChat";
 import HeroBanner from "@/components/HeroBanner/HeroBanner";
 import About from "@/components/Home/About/About";
+import Features from "@/components/Home/Features/Features";
 import Layout from "@/components/Layout/Layout";
+import SEO from "@/components/SEO/SEO";
 import Head from "next/head";
 
 export default function Home() {
@@ -16,6 +19,9 @@ export default function Home() {
       <Layout>
         <HeroBanner />
         <About />
+        <Features />
+        <CoffeeChat />
+        <SEO />
       </Layout>
     </>
   );

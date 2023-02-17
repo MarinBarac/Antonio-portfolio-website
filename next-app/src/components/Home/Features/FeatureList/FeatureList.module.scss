@@ -1,0 +1,84 @@
+@import "@/styles/variables.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+
+  .textSide {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    .list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      .feature {
+        display: flex;
+        gap: 16px;
+
+        .featureText {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          padding-top: 10px;
+
+          .featureTitle {
+          }
+
+          .featureDescription {
+            color: $gray-400;
+          }
+        }
+      }
+    }
+
+    .link {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 24px;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+      color: $primary-700;
+    }
+  }
+
+  .imageSide {
+    padding-bottom: 7px;
+
+    .card {
+      position: relative;
+      background-color: $gray-900;
+      border-radius: 40px;
+      padding: 48px 44px 31px;
+      display: flex;
+      flex-direction: column;
+
+      .imageComment {
+        font-family: "Preahvihear", sans-serif;
+        font-size: 24px;
+        line-height: 110%;
+        color: $white;
+        max-width: 423px;
+        margin: 0 auto;
+
+        span {
+          color: $primary-600;
+        }
+      }
+
+      .arrow {
+        display: flex;
+        justify-content: center;
+        padding-right: 13%;
+      }
+    }
+  }
+}

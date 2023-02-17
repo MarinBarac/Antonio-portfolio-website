@@ -1,0 +1,18 @@
+@import "@/styles/variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .expand {
+    padding: 12px 20px;
+    display: flex;
+    gap: 8px;
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: $primary-700;
+  }
+}

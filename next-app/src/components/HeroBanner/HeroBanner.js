@@ -31,6 +31,7 @@ const HeroBanner = () => {
           <Swiper
             modules={[Autoplay]}
             slidesPerView={1}
+            spaceBetween={20}
             direction="vertical"
             loop={true}
             autoplay={{ delay: 1000, disableOnInteraction: false }}
