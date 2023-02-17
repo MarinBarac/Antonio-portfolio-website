@@ -14,8 +14,8 @@ const FeatureList = () => {
     <div className={styles.container}>
       <div className={styles.textSide}>
         <ul className={styles.list}>
-          {FEATURES.map((feature) => (
-            <li className={styles.feature}>
+          {FEATURES.map((feature, index) => (
+            <li className={styles.feature} key={`feature-${index}`}>
               <div className={styles.featureImage}>
                 <Image
                   src={feature.icon.src}
