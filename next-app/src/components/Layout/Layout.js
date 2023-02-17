@@ -5,7 +5,7 @@ const Layout = ({ children, activeTab }) => {
   return (
     <>
       <Header activeTab={activeTab} />
-        {children}
+      <main>{children}</main>
       <Footer />
     </>
   );

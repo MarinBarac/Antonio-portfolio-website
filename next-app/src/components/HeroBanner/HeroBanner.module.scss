@@ -1,0 +1,64 @@
+@import "@/styles/variables.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+
+  .imageContainer {
+    position: relative;
+    width: 100%;
+
+    .imageComment {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      font-family: "Preahvihear", sans-serif;
+      font-size: 24px;
+      line-height: 110%;
+      color: $white;
+      text-align: right;
+
+      span {
+        color: $primary-600;
+      }
+    }
+
+    .glowContainer {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .text {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 110%;
+
+    .swiperWrapper {
+      overflow: hidden;
+      max-height: 55px;
+
+      .swiper {
+        position: relative;
+        height: 55px;
+
+        .slide {
+          background: linear-gradient(91.17deg, #5f55d5 0.37%, #ee4477 91.66%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+
+          span {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

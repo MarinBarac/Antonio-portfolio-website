@@ -19,4 +19,19 @@ body {
 body {
   background-color: $black;
   color: $white;
+  min-height: 100dvh;
+}
+
+main {
+  display: grid;
+  grid-template-rows: 80px 1fr 80px;
+  height: calc(100dvh - 160px);
+}
+
+section {
+  width: 100%;
+  max-width: 1168px;
+  padding-inline: 24px;
+  padding: 96px 0px;
+  margin: 0 auto;
 }
