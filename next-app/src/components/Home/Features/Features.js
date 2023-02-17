@@ -10,7 +10,7 @@ const Features = () => {
         subtitle="HERE COMES THE “FUN” PART"
         description={
           <>
-            If you're looking for attractive UI design, you can save time by
+            If you&apos;re looking for attractive UI design, you can save time by
             visiting dribbble.com.
             <br />
             <br />

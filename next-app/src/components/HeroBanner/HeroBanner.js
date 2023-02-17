@@ -40,7 +40,7 @@ const HeroBanner = () => {
             className={styles.swiper}
           >
             {SERVICES.map((service) => (
-              <SwiperSlide className={styles.slide}>
+              <SwiperSlide className={styles.slide} key={service}>
                 {service}
                 <span>?</span>
               </SwiperSlide>

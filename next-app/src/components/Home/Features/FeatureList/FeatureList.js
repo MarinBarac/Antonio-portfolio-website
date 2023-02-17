@@ -41,7 +41,7 @@ const FeatureList = () => {
       <div className={styles.imageSide}>
         <div className={styles.card}>
           <p className={styles.imageComment}>
-            &ldquo;Let's make <span>your user</span> not feeling like Word users
+            &ldquo;Let&apos;s make <span>your user</span> not feeling like Word users
             back in the days.&rdquo;
           </p>
           <div className={styles.arrow}>
