@@ -1,4 +1,5 @@
 import HeroBanner from "@/components/HeroBanner/HeroBanner";
+import About from "@/components/Home/About/About";
 import Layout from "@/components/Layout/Layout";
 import Head from "next/head";
 
@@ -14,6 +15,7 @@ export default function Home() {
       </Head>
       <Layout>
         <HeroBanner />
+        <About />
       </Layout>
     </>
   );

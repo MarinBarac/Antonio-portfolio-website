@@ -23,15 +23,13 @@ body {
 }
 
 main {
-  display: grid;
-  grid-template-rows: 80px 1fr 80px;
   height: calc(100dvh - 160px);
 }
 
 section {
-  width: 100%;
+  position: relative;
   max-width: 1168px;
-  padding-inline: 24px;
-  padding: 96px 0px;
+  padding: 96px 24px;
   margin: 0 auto;
+  overflow: hidden;
 }
