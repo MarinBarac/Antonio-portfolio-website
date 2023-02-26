@@ -1,0 +1,24 @@
+@import "@/styles/variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  .glowContainer {
+    position: absolute;
+    width: 501.29px;
+    height: 561.19px;
+    top: -120%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .description {
+    max-width: 585px;
+    font-size: 20px;
+    text-align: center;
+    color: $gray-400;
+  }
+}
