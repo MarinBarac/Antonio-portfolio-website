@@ -1,62 +1,71 @@
 @import "@/styles/variables.scss";
 
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
+.section {
+  border-bottom: 1px solid #262626;
+  box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.33);
+  
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
 
-  .imageContainer {
-    position: relative;
-    width: 100%;
+    .imageContainer {
+      position: relative;
+      width: 100%;
 
-    .imageComment {
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      font-family: "Preahvihear", sans-serif;
-      font-size: 24px;
-      line-height: 110%;
-      color: $white;
-      text-align: right;
+      .imageComment {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        font-family: "Preahvihear", sans-serif;
+        font-size: 24px;
+        line-height: 110%;
+        color: $white;
+        text-align: right;
 
-      span {
-        color: $primary-600;
+        span {
+          color: $primary-600;
+        }
+      }
+
+      .glowContainer {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+      }
+
+      img {
+        width: 100%;
       }
     }
 
-    .glowContainer {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-    }
+    .text {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 110%;
+      align-self: center;
 
-    img {
-      width: 100%;
-    }
-  }
+      .swiperWrapper {
+        overflow: hidden;
+        max-height: 55px;
 
-  .text {
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 110%;
-    align-self: center;
+        .swiper {
+          position: relative;
+          height: 55px;
 
-    .swiperWrapper {
-      overflow: hidden;
-      max-height: 55px;
+          .slide {
+            background: linear-gradient(
+              91.17deg,
+              #5f55d5 0.37%,
+              #ee4477 91.66%
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
 
-      .swiper {
-        position: relative;
-        height: 55px;
-
-        .slide {
-          background: linear-gradient(91.17deg, #5f55d5 0.37%, #ee4477 91.66%);
-          background-clip: text;
-          -webkit-background-clip: text;
-          color: transparent;
-
-          span {
-            color: $white;
+            span {
+              color: $white;
+            }
           }
         }
       }

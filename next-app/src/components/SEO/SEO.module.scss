@@ -1,18 +1,23 @@
 @import "@/styles/variables.scss";
 
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
-  .expand {
-    padding: 12px 20px;
+.section {
+  border: 1px solid #262626;
+  box-shadow: 0px -10px 14px rgba(0, 0, 0, 0.33);
+  
+  .container {
     display: flex;
-    gap: 8px;
-    border-radius: 24px;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    color: $primary-700;
+    flex-direction: column;
+    gap: 16px;
+
+    .expand {
+      padding: 12px 20px;
+      display: flex;
+      gap: 8px;
+      border-radius: 24px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      color: $primary-700;
+    }
   }
 }
