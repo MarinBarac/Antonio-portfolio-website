@@ -1,3 +1,5 @@
+import AboutSection from "@/components/AboutPage/AboutSection";
+import CoffeeChat from "@/components/CoffeeChat/CoffeeChat";
 import Layout from "@/components/Layout/Layout";
 import PageTitle from "@/components/PageTitle/PageTitle";
 
@@ -15,6 +17,8 @@ export default function About() {
             </>
           }
         />
+        <AboutSection />
+        <CoffeeChat />
       </Layout>
     </>
   );

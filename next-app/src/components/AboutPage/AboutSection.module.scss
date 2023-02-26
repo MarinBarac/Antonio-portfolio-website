@@ -1,0 +1,54 @@
+@import "@/styles/variables.scss";
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+
+    .textSide {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        .titleContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .title {
+                font-family: 'Preahvihear';
+                font-weight: 400;
+                line-height: 100%;
+                letter-spacing: 0.02em;
+
+                span {
+                    opacity: 1;
+                    animation: .6s ease-out 2s infinite forwards typing;
+                }
+            }
+
+            .titleDescription {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 20px;
+                line-height: 24px;
+                color: $gray-400;
+
+                .imageContainer {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+@keyframes typing {
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
