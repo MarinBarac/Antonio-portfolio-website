@@ -15,10 +15,14 @@ import InteractiveText from "../InteractiveText/InteractiveText";
 const HeroBanner = () => {
   return (
     <section className={styles.section}>
-      <div className={clsx('content', styles.container)}>
+      <div className={clsx("content", styles.container)}>
         <div className={styles.imageContainer}>
           <p className={styles.imageComment}>
-            <InteractiveText text={`"This is not Antonio Vidakovic"`} startIndex={13} endIndex={29}/>
+            <InteractiveText
+              text={`"This is not Antonio Vidakovic"`}
+              startIndex={13}
+              endIndex={29}
+            />
           </p>
           <div className={styles.glowContainer}>
             <Glow />
@@ -28,7 +32,7 @@ const HeroBanner = () => {
           </div>
         </div>
         <div className={styles.text}>
-          Hey there. &#128064;
+          Hey there. <span>&#128064;</span>
           <br /> Are you looking for:
           <div className={styles.swiperWrapper}>
             <Swiper

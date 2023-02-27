@@ -10,9 +10,13 @@
     position: absolute;
     width: 501.29px;
     height: 561.19px;
-    top: -120%;
+    top: -400px;
     left: 50%;
     transform: translateX(-50%);
+
+    &.low {
+      top: -250px;
+    }
   }
 
   .description {

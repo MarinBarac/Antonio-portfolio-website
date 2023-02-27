@@ -41,6 +41,11 @@
       line-height: 110%;
       align-self: center;
 
+      span {
+        position: relative;
+        top: -10px;
+      }
+
       .swiperWrapper {
         overflow: hidden;
         max-height: 55px;

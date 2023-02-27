@@ -1,7 +1,16 @@
-import styles from './Glow.module.scss';
+import clsx from "clsx";
+import styles from "./Glow.module.scss";
 
-const Glow = () => {
-    return <div className={styles.glow}/>
-}
+const Glow = ({ styleClass }) => {
+    console.log(styleClass);
+  return (
+    <div
+      className={clsx({
+        [styles.glow]: true,
+        [styles[styleClass]]: !!styleClass,
+      })}
+    />
+  );
+};
 
 export default Glow;

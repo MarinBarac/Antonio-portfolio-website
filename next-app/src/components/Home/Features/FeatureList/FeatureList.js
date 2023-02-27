@@ -41,10 +41,10 @@ const FeatureList = () => {
       </div>
       <div className={styles.imageSide}>
         <div className={styles.card}>
-          <p className={styles.imageComment}>
+          <div className={styles.imageComment}>
             <InteractiveText text={`"Let's make your user not feeling like Word users
             back in the days."`} startIndex={12} endIndex={20}/>
-          </p>
+          </div>
           <div className={styles.arrow}>
             <Image
               src={LeftArrow.src}
