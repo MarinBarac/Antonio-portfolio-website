@@ -17,13 +17,13 @@ const HeroBanner = () => {
     <section className={styles.section}>
       <div className={clsx("content", styles.container)}>
         <div className={styles.imageContainer}>
-          <p className={styles.imageComment}>
+          <div className={styles.imageComment}>
             <InteractiveText
               text={`"This is not Antonio Vidakovic"`}
               startIndex={13}
               endIndex={29}
             />
-          </p>
+          </div>
           <div className={styles.glowContainer}>
             <Glow />
           </div>
