@@ -1,13 +1,14 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import LogoImage from "@assets/images/Logo.png"
 
 import styles from './Logo.module.scss';
 
 const Logo = () => {
-    return <div className={styles.container}>
+    return <Link href="/" className={styles.container}>
         <Image src={LogoImage.src} width={116} height={29}/>
-    </div>
+    </Link>
 }
 
 export default Logo;

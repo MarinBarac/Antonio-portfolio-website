@@ -15,17 +15,17 @@ const DESCRIPTION = (
     <br />
     <br />
     In my early twenties started to work as a freelance graphic designer doing
-    ugly club flyers in Photoshop. Between then and now, I finish my bachelor's
-    in Business economics and master's in Marketing and communication.
+    ugly club flyers in Photoshop. Between then and now, I finish my bachelor&apos;s
+    in Business economics and master&apos;s in Marketing and communication.
     <br />
     <br />
     Almost three years ago, I bet with my software dev. girlfriend that I can
     learn to code and get a job offer just to prove to her that people who
-    design for a living are not only good at "playing with watercolors."
+    design for a living are not only good at &ldquo;playing with watercolors.&ldquo;
     <br />
     <br />
     After finishing the course and getting a job offer for iOS dev, I decided
-    that I'm not into typing code all day long, but I also didn't want to move
+    that I&apos;m not into typing code all day long, but I also didn&apos;t want to move
     from the IT sector. And when you mix graphic design and IT, you get a
     beautiful and expensive cocktail named: UX/UI design.
     <br />
@@ -47,10 +47,10 @@ const AboutSection = () => {
         <div className={styles.textSide}>
           <div className={styles.titleContainer}>
             <h2 className={styles.title}>
-              I'm a UX/UI designer.<span>|</span>
+              I&apos;m a UX/UI designer.<span>|</span>
             </h2>
             <div className={styles.titleDescription}>
-              Currently, I'm a UX/UI designer at{" "}
+              Currently, I&apos;m a UX/UI designer at{" "}
               <div className={styles.imageContainer}>
                 <Image
                   src={LocasticLogo.src}
