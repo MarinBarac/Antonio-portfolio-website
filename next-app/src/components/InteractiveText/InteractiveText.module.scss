@@ -1,0 +1,32 @@
+@import "@/styles/variables.scss";
+
+.text {
+  .character {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+
+    &.purple {
+      color: $primary-600;
+    }
+
+    span {
+      display: inline-block;
+      position: relative;
+      left: 0;
+      top: 0;
+      transition: all 0.05s ease-in;
+      z-index: 1;
+    }
+
+    &:hover {
+      span {
+        top: -20px;
+        left: -5px;
+        transform-origin: center;
+        transform: rotateZ(-20deg);
+      }
+    }
+  }
+}

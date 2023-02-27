@@ -8,6 +8,7 @@ import WordImage from "@assets/images/Word.jpg";
 import { FEATURES } from "../constants";
 
 import styles from "./FeatureList.module.scss";
+import InteractiveText from "@/components/InteractiveText/InteractiveText";
 
 const FeatureList = () => {
   return (
@@ -41,8 +42,8 @@ const FeatureList = () => {
       <div className={styles.imageSide}>
         <div className={styles.card}>
           <p className={styles.imageComment}>
-            &ldquo;Let&apos;s make <span>your user</span> not feeling like Word users
-            back in the days.&rdquo;
+            <InteractiveText text={`"Let's make your user not feeling like Word users
+            back in the days."`} startIndex={12} endIndex={20}/>
           </p>
           <div className={styles.arrow}>
             <Image

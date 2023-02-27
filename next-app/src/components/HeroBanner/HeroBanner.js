@@ -10,6 +10,7 @@ import styles from "./HeroBanner.module.scss";
 import "swiper/css";
 import "swiper/css/autoplay";
 import clsx from "clsx";
+import InteractiveText from "../InteractiveText/InteractiveText";
 
 const HeroBanner = () => {
   return (
@@ -17,7 +18,7 @@ const HeroBanner = () => {
       <div className={clsx('content', styles.container)}>
         <div className={styles.imageContainer}>
           <p className={styles.imageComment}>
-            &ldquo;This is not <span>Antonio Vidakovic</span>&rdquo;
+            <InteractiveText text={`"This is not Antonio Vidakovic"`} startIndex={13} endIndex={29}/>
           </p>
           <div className={styles.glowContainer}>
             <Glow />
