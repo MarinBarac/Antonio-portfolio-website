@@ -1,5 +1,6 @@
 import PageTitle from "@/components/PageTitle/PageTitle";
 import Layout from "@/components/Layout/Layout";
+import FeatureSection from "@/components/WorkPage/FeatureSection/FeatureSection";
 
 const WorkPage = () => {
   return (
@@ -24,6 +25,7 @@ const WorkPage = () => {
           }
           glowClass="low"
         />
+        <FeatureSection />
       </Layout>
     </>
   );

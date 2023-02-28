@@ -7,7 +7,7 @@ import styles from './Logo.module.scss';
 
 const Logo = () => {
     return <Link href="/" className={styles.container}>
-        <Image src={LogoImage.src} width={116} height={29}/>
+        <Image src={LogoImage.src} alt="Logo" width={116} height={29}/>
     </Link>
 }
 

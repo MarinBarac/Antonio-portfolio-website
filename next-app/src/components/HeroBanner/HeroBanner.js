@@ -46,8 +46,11 @@ const HeroBanner = () => {
               speed={2000}
               className={styles.swiper}
             >
-              {SERVICES.map((service) => (
-                <SwiperSlide className={styles.slide} key={service}>
+              {SERVICES.map((service, index) => (
+                <SwiperSlide
+                  className={styles.slide}
+                  key={`${service}-${index}`}
+                >
                   {service}
                   <span>?</span>
                 </SwiperSlide>
