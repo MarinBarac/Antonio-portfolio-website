@@ -10,6 +10,7 @@ const Features = () => {
         <FeatureTitle
           title="How you can solve my problem?"
           subtitle="HERE COMES THE “FUN” PART"
+          descriptionStyle="largeDescription"
           description={
             <>
               If you&apos;re looking for attractive UI design, you can save time
