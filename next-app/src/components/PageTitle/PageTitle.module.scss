@@ -24,5 +24,9 @@
     font-size: 20px;
     text-align: center;
     color: $gray-400;
+
+    &.contact {
+      max-width: 476px;
+    }
   }
 }

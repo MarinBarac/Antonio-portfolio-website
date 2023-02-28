@@ -2,7 +2,7 @@ import clsx from "clsx";
 import Glow from "../Glow/Glow";
 import styles from "./PageTitle.module.scss";
 
-const PageTitle = ({ title, description, glowClass }) => {
+const PageTitle = ({ title, description, glowClass, descriptionClass }) => {
   return (
     <section>
       <div className={clsx("content", styles.container)}>
@@ -15,7 +15,14 @@ const PageTitle = ({ title, description, glowClass }) => {
           <Glow styleClass="dark" />
         </div>
         <h1 className={styles.title}>{title}</h1>
-        <p className={styles.description}>{description}</p>
+        <p
+          className={clsx({
+            [styles.description]: true,
+            [styles[descriptionClass]]: !!descriptionClass,
+          })}
+        >
+          {description}
+        </p>
       </div>
     </section>
   );
