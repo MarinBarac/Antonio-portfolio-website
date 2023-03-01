@@ -5,19 +5,67 @@
   flex-direction: column;
   gap: 6px;
 
-  .label {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
-    color: $gray-400;
+  .labelContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .label,
+    .error {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      color: $gray-400;
+    }
+
+    .error {
+      color: $primary-600;
+      font-weight: 500;
+      letter-spacing: .05em;
+      opacity: 0;
+      transition: all 0.2s;
+
+      &.show {
+        opacity: 1;
+      }
+    }
   }
 
   .input {
-    background-color: $white;
+    max-width: 100%;
+    background-color: #232323;
+    border: none;
     padding: 10px 14px;
     border-radius: 8px;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
     font-size: 16px;
     line-height: 24px;
-    color: $gray-400;
+    color: $white;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+
+    &::placeholder {
+      color: $gray-500;
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+      border: 2px solid $primary-600;
+    }
+  }
+
+  .textarea {
+    resize: none;
+    font-family: "Inter";
+
+    &::-webkit-scrollbar {
+      width: 0.4em;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $primary-600;
+      border-radius: 8px;
+    }
   }
 }
