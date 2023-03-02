@@ -36,7 +36,7 @@ const FormInput = ({
               ref={ref}
               className={clsx(styles.input, styles.textarea)}
               style={{ height: "128px" }}
-            ></textarea>
+            />
           ) : (
             <input
               type={type}

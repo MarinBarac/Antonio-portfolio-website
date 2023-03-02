@@ -6,10 +6,12 @@ import FormInput from "./FormInput/FormInput";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import sendEmail from "@/services/mail/sendEmail";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 const defaultValues = {
   fullName: "",
   email: "",
+  message: "",
 };
 
 const formSchema = z.object({
@@ -18,32 +20,38 @@ const formSchema = z.object({
     .string()
     .min(1, { message: "Email is required!" })
     .email({ message: "Please enter valid email!" }),
+  message: z.string(),
 });
 
 const ContactForm = () => {
   const {
     handleSubmit,
     control,
+    reset,
     formState: { errors },
   } = useForm({
     defaultValues: { ...defaultValues },
     resolver: zodResolver(formSchema),
   });
+  const [isSending, setIsSending] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState("");
 
   const onSubmit = async (data) => {
+    setIsSending(true);
     const response = await sendEmail({
       url: "/api/contact",
       mailData: { ...data },
     });
-
+    setIsSending(false);
+    
     setNotificationMessage(
       !!response
         ? "Your message was sent succesfully!"
         : "Ooops! Something went wrong, please try again later."
     );
+    reset();
   };
-  console.log(notificationMessage);
+  
   return (
     <section className={styles.section}>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -75,7 +83,7 @@ const ContactForm = () => {
           styleClass="purple"
           style={{ width: "100%", justifyContent: "center" }}
         >
-          Send message
+          {isSending ? <LoadingSpinner /> : 'Send message'}
         </Button>
       </form>
     </section>
