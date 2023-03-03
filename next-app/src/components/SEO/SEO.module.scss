@@ -9,7 +9,8 @@
     flex-direction: column;
     gap: 16px;
 
-    .expand {
+    .expandBtn {
+      cursor: pointer;
       padding: 12px 20px;
       display: flex;
       gap: 8px;
@@ -18,6 +19,18 @@
       font-size: 16px;
       line-height: 24px;
       color: $primary-700;
+      transform-origin: center;
+      transition: all .5s;
+
+      img {
+        transition: inherit;
+      }
+
+      &.expanded {
+        img {
+          transform: rotateZ(180deg);
+        }
+      }
     }
   }
 }

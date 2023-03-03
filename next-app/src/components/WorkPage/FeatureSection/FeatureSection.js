@@ -17,7 +17,7 @@ const FeatureSection = () => {
             title="Art at its best"
             subtitle="DON'T STEAL"
             description={
-              <>
+              <p>
                 Here on the right is the only piece of client work I did for
                 myself, and I broke an NDA, you are welcome.
                 <br />
@@ -29,7 +29,7 @@ const FeatureSection = () => {
                 If not, a 30-minute online video coffee can give you all the
                 answers you need about my approach to designing products and
                 experiences. Plus, it&apos;s free(coffee is not included).
-              </>
+              </p>
             }
           />
           <div className={styles.buttons}>

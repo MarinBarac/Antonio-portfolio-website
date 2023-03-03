@@ -12,7 +12,7 @@ const Features = () => {
           subtitle="HERE COMES THE “FUN” PART"
           descriptionStyle="largeDescription"
           description={
-            <>
+            <p>
               If you&apos;re looking for attractive UI design, you can save time
               by visiting dribbble.com.
               <br />
@@ -22,7 +22,7 @@ const Features = () => {
               product in the first place solves their issues which will, in the
               end, lead to higher engagement and a rise in incomes, then I can
               help, and you can continue to read.
-            </>
+            </p>
           }
         />
         <FeatureList />
