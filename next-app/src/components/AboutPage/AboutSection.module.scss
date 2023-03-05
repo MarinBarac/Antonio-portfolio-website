@@ -30,6 +30,7 @@
       .titleDescription {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 8px;
         font-size: 20px;
         line-height: 24px;
@@ -37,6 +38,51 @@
 
         .imageContainer {
           display: inline-block;
+        }
+      }
+    }
+  }
+
+  .imageSide {
+    .image {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+
+    .imageSide {
+      grid-row: 1;
+      margin-top: -64px;
+
+      .image {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .textSide {
+      .titleContainer {
+        align-items: flex-start;
+
+        .titleDescription {
+          font-size: 18px;
+          line-height: 28px;
+
+          .imageContainer {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+
+            .firmLogo {
+              align-self: center;
+            }
+          }
         }
       }
     }

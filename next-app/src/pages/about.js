@@ -16,6 +16,13 @@ export default function About() {
               Antonio, skip to the Contact page.<br />No hard feelings.
             </>
           }
+          mobileDescription= {
+            <>
+              So you made it here. Congratulations.<br /><br />If you are not into reading
+              about the short life story of some internet stranger named
+              Antonio, skip to the Contact page.<br />No hard feelings.
+            </>
+          }
         />
         <AboutSection />
         <CoffeeChat />

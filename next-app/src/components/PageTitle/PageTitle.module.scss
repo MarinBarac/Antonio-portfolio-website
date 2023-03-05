@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  text-align: center;
 
   .glowContainer {
     position: absolute;
@@ -22,11 +23,24 @@
   .description {
     max-width: 585px;
     font-size: 20px;
-    text-align: center;
     color: $gray-400;
 
     &.contact {
       max-width: 476px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .container {
+
+    .description {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    .glowContainer {
+      display: none;
     }
   }
 }

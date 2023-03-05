@@ -57,6 +57,7 @@ const AboutSection = () => {
                   alt="Locastic"
                   width={LocasticLogo.width}
                   height={LocasticLogo.height}
+                  className={styles.firmLogo}
                 />
               </div>
             </div>
