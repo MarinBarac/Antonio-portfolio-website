@@ -37,10 +37,8 @@ const FeatureSection = () => {
             <Button styleClass="white-black">Don&apos;t book it</Button>
           </div>
           <p className={styles.bottomText}>
-            To gain insight into my UI thinking, visit{" "}
-            <Link href="#" className={styles.link}>
-              vida994.dribble.com
-            </Link>
+            If you still want to see some of the work I did, explore case
+            studies below.
           </p>
         </div>
         <div className={styles.imageSide}>
@@ -49,6 +47,7 @@ const FeatureSection = () => {
             alt="creative image"
             width={CreativeImage.width}
             height={CreativeImage.height}
+            className={styles.image}
           />
         </div>
       </div>

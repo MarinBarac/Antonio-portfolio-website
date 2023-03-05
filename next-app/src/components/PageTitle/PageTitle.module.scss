@@ -41,6 +41,10 @@
 
     .glowContainer {
       display: none;
+
+      &.low {
+        display: block;
+      }
     }
   }
 }

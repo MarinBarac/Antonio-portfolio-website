@@ -4,10 +4,6 @@ export const LINKS = [
     href: "/about",
   },
   {
-    label: "The Process",
-    href: '/process',
-  },
-  {
     label: "Work",
     href: "/work",
   },

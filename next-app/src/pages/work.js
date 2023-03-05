@@ -1,6 +1,7 @@
 import PageTitle from "@/components/PageTitle/PageTitle";
 import Layout from "@/components/Layout/Layout";
 import FeatureSection from "@/components/WorkPage/FeatureSection/FeatureSection";
+import CoffeeChat from "@/components/CoffeeChat/CoffeeChat";
 
 const WorkPage = () => {
   return (
@@ -26,6 +27,7 @@ const WorkPage = () => {
           glowClass="low"
         />
         <FeatureSection />
+        <CoffeeChat />
       </Layout>
     </>
   );
