@@ -16,8 +16,8 @@ const About = () => {
           </p>
           <p>Now you are interested to read more?</p>
         </div>
-        <Button styleClass="white-purple">
-          Yes. Looking for a 5 minutes mind break
+        <Button styleClass="white-purple" href="/about">
+          Yes. Read more.
         </Button>
         <div className={styles.glowContainer}>
           <Glow />

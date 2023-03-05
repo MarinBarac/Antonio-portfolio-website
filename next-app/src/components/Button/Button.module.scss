@@ -4,6 +4,7 @@
   width: fit-content;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 12px 20px;
   font-weight: 600;
@@ -11,6 +12,7 @@
   line-height: 24px;
   border: none;
   border-radius: 8px;
+  text-decoration: none;
 
   &:hover {
     cursor: pointer;

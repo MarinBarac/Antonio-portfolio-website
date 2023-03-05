@@ -20,16 +20,20 @@ const HeroBanner = () => {
           <div className={styles.imageComment}>
             <InteractiveText
               text={`"This is not Antonio Vidakovic"`}
-              startIndex={13}
-              endIndex={29}
+              startIndex={3}
+              endIndex={4}
             />
           </div>
           <div className={styles.glowContainer}>
             <Glow />
           </div>
-          <div className={styles.image}>
-            <Image src={Avatar.src} alt="Avatar" width={420} height={441} />
-          </div>
+          <Image
+            src={Avatar.src}
+            alt="Avatar"
+            width={420}
+            height={441}
+            className={styles.image}
+          />
         </div>
         <div className={styles.text}>
           Hey there. <span>&#128064;</span>
@@ -41,7 +45,8 @@ const HeroBanner = () => {
               spaceBetween={20}
               direction="vertical"
               loop={true}
-              autoplay={{ delay: 1000, disableOnInteraction: false }}
+              autoplay={{ delay: 1500, disableOnInteraction: false }}
+              updateOnWindowResize={true}
               effect="slide"
               speed={2000}
               className={styles.swiper}

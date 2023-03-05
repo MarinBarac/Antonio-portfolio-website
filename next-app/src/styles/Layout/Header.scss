@@ -1,6 +1,14 @@
+@import "@/styles/variables.scss";
+
 header {
     display: grid;
     grid-template-columns: auto 1fr;
     padding: 0px 112px;
     height: 80px;
+}
+
+@media screen and (max-width: $desktop) {
+    header {
+        padding: 18px 24px;
+    }
 }

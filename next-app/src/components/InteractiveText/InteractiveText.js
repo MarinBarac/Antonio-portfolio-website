@@ -2,18 +2,29 @@ import clsx from "clsx";
 import styles from "./InteractiveText.module.scss";
 
 const InteractiveText = ({ text, startIndex, endIndex }) => {
-  const map = text.split("").map((character, index) => (
-    <span
+  const formattedText = text.split(" ").map((word, index, arr) => (
+    <div
       className={clsx({
-        [styles.character]: character !== " " && character !== `"`,
+        [styles.word]: true,
         [styles.purple]: index >= startIndex && index <= endIndex,
       })}
-      key={`span-${index}`}
+      key={`word-${index}`}
     >
-      <span>{character}</span>
-    </span>
+      {word.split("").map((character, index) => (
+        <span
+          className={clsx({
+            [styles.character]: character !== " " && character !== `"`,
+            [styles.specialCharacter]: character === " " || character === `"`,
+          })}
+          key={`word-span-${index}`}
+        >
+          <span>{character}</span>
+        </span>
+      ))}
+      {index < arr.length - 1 && <>&nbsp;</>}
+    </div>
   ));
-  return <div className={styles.text}>{map}</div>;
+  return <div className={styles.text}>{formattedText}</div>;
 };
 
 export default InteractiveText;

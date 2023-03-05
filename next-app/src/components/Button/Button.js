@@ -22,7 +22,7 @@ const Button = ({ children, styleClass, href, type, style }) => {
   }
 
   return (
-    <Link className={btnStyles} style={{ ...style }} href={href}>
+    <Link href={href} className={btnStyles} style={{ ...style }}>
       {children}
     </Link>
   );

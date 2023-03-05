@@ -25,3 +25,22 @@
         gap: 12px;
     }
 }
+
+@media screen and (max-width: $tablet) {
+    .container {
+        gap: 16px;
+
+        .description {
+            margin-bottom: 16px;
+        }
+
+        .buttons {
+            width: 100%;
+            flex-direction: column;
+
+            & > * {
+                width: 100%;
+            }
+        }
+    }
+}

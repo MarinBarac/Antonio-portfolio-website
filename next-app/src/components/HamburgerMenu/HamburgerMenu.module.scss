@@ -1,0 +1,59 @@
+@import "@/styles/variables.scss";
+
+.container {
+  display: none;
+}
+
+@media screen and (max-width: $desktop) {
+  .container {
+    position: relative;
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px;
+    margin-left: auto;
+    transform-origin: center;
+
+    .bar {
+      width: 20px;
+      height: 2.5px;
+      background-color: $white;
+      border-radius: 10px;
+      opacity: 1;
+      transition: opacity 0.2s, transform 0.2s, top 0.2s 0.2s, bottom 0.2s 0.2s,;
+
+      &.first {
+        position: absolute;
+        top: 12px;
+      }
+
+      &.third {
+        position: absolute;
+        bottom: 12px;
+      }
+    }
+  }
+
+  .container.active {
+    .bar {
+      transition: top 0.2s, bottom 0.2s, opacity 0.2s, transform 0.2s 0.2s;
+
+      &.first {
+        top: 50%;
+        transform: rotate(45deg);
+      }
+
+      &.second {
+        opacity: 0;
+      }
+
+      &.third {
+        bottom: calc(50% - 2.5px);
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

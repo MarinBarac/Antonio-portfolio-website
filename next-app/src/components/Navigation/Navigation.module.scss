@@ -21,3 +21,30 @@
     }
   }
 }
+
+@media screen and (max-width: $desktop) {
+  .container {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    padding: 96px 24px 48px;
+    background-color: $black;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 5;
+    transition: .4s ease-in;
+
+    .links {
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 0;
+    }
+  }
+
+  .container.show {
+    right: 0;
+  }
+}

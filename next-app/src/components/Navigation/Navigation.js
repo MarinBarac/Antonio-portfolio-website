@@ -5,14 +5,20 @@ import Link from "next/link";
 
 import styles from "./Navigation.module.scss";
 
-const Navigation = ({ activeTab }) => {
+const Navigation = ({ activeTab, show, closeMenu }) => {
+  const containerClass = clsx({
+    [styles.container]: true,
+    [styles.show]: show,
+  })
+
   return (
-    <div className={styles.container}>
+    <div className={containerClass}>
       <ul className={styles.links}>
         {LINKS.map((link) => (
           <li key={link.label.toLowerCase()}>
             <Link
               href={link.href}
+              onClick={closeMenu}
               className={clsx({
                 [styles.link]: true,
                 [styles.active]: activeTab === link.href,

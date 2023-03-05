@@ -2,7 +2,6 @@
 
 .section {
   background: #161616;
-  z-index: -1;
   
   .container {
     display: flex;
@@ -29,8 +28,27 @@
       position: absolute;
       width: 587px;
       height: 657.14px;
-      z-index: -3;
+      z-index: 0;
       top: 65%;
+    }
+
+    a {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .section {
+    .container {
+      gap: 16px;
+
+      .text {
+        p {
+          line-height: 28px;
+        }
+      }
     }
   }
 }

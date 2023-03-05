@@ -34,3 +34,9 @@
     }
   }
 }
+
+@media screen and (max-width: $desktop) {
+  .section {
+    display: none;
+  }
+}

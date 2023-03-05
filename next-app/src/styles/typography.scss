@@ -41,3 +41,15 @@ p {
   line-height: 24px;
   color: $primary-600;
 }
+
+@media screen and (max-width: $tablet) {
+  h2 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  h3 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}

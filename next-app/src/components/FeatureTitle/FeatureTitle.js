@@ -31,6 +31,7 @@ const FeatureTitle = ({
       </div>
       <div
         className={clsx({
+          [styles.description]: true,
           [styles[descriptionStyle]]: descriptionStyle,
           [styles.expanded]: expanded,
         })}

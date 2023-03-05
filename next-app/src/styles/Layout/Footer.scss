@@ -4,12 +4,20 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
+  gap: 32px;
+  flex-wrap: wrap;
+  min-height: 80px;
   padding: 0px 112px;
 
   .copyright {
     font-size: 16px;
     line-height: 24px;
     color: $primary-300;
+  }
+}
+
+@media screen and (max-width: $desktop) {
+  footer {
+    padding: 48px 24px;
   }
 }

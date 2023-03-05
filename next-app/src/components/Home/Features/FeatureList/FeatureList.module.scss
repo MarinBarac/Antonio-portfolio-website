@@ -5,122 +5,101 @@
   grid-template-columns: 1fr 1fr;
   gap: 64px;
 
-  .textSide {
+  .list {
+    background-color: linear-gradient(97.24deg, $black 2.04%, $black 100%);
+    list-style: none;
     display: flex;
     flex-direction: column;
     gap: 32px;
+    transform-style: preserve-3d;
 
-    .list {
-      background-color: linear-gradient(97.24deg, $black 2.04%, $black 100%);
-      list-style: none;
+    .feature {
+      width: 100%;
+      background: $black;
+      position: relative;
       display: flex;
-      flex-direction: column;
-      gap: 32px;
+      gap: 16px;
+      border: 1px solid transparent;
+      border-radius: 20px;
+      padding: 0px;
+      left: 0;
+      transition: all 0.4s;
       transform-style: preserve-3d;
 
-      .feature {
-        width: 100%;
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        border-radius: inherit;
+        inset: 0;
+        transition: inherit;
+        z-index: -2;
+      }
+
+      &::before {
         background: $black;
-        position: relative;
+        transform: translateZ(-19px);
+      }
+
+      &::after {
+        background-color: $primary-600;
+        transform: translateZ(-20px);
+      }
+
+      .featureText {
         display: flex;
-        gap: 16px;
-        border: 1px solid transparent;
-        border-radius: 20px;
-        padding: 0px;
-        left: 0;
-        transition: all .4s;
-        transform-style: preserve-3d;
+        flex-direction: column;
+        gap: 8px;
+        padding-top: 10px;
+        transition: inherit;
 
-        &::after,
-        &::before {
-          content: "";
-          position: absolute;
-          border-radius: inherit;
-          inset: 0;
-          transition: inherit;
-          z-index: -2;
+        .featureDescription {
+          color: $gray-400;
         }
+      }
+
+      &:hover {
+        width: calc(100% + 48px);
+        cursor: pointer;
+        margin: 5% 0;
+        padding: 24px;
+        left: -24px;
+        background: linear-gradient(97.24deg, #131415 2.04%, #2a1c51 100%);
+        transform: perspective(5000px) translateZ(10px);
+        border: 1px solid $primary-900;
 
         &::before {
-          background: $black;
-          transform: translateZ(-19px);
+          left: 10px;
+          bottom: 20px;
+          top: -20px;
+          right: -10px;
+          filter: blur(30px);
         }
 
         &::after {
-          background-color: $primary-600;
-          transform: translateZ(-20px);
-        }
-
-        .featureText {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-          padding-top: 10px;
-          transition: inherit;
-
-          .featureDescription {
-            color: $gray-400;
-          }
-        }
-
-        &:hover {
-          width: calc(100% + 48px);
-          cursor: pointer;
-          margin: 5% 0;
-          padding: 24px;
-          left: -24px;
-          background: linear-gradient(97.24deg, #131415 2.04%, #2A1C51 100%);
-          transform: perspective(5000px) translateZ(10px);
-          border: 1px solid $primary-900;
-
-          &::before {
-            left: 10px;
-            bottom: 20px;
-            top: -20px;
-            right: -10px;
-            filter: blur(30px);
-          }
-
-          &::after {
-            left: 24px;
-            bottom: 24px;
-            top: -24px;
-            right: -24px;
-          }
-        }
-
-        &:first-child:hover {
-          margin: 0px 0px 5%;
-        }
-
-        &:last-child:hover {
-          margin: 5% 0px 0px;
+          left: 24px;
+          bottom: 24px;
+          top: -24px;
+          right: -24px;
         }
       }
-    }
 
-    .link {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 20px;
-      border-radius: 24px;
-      font-size: 16px;
-      line-height: 24px;
-      font-weight: 600;
-      color: $primary-700;
+      &:first-child:hover {
+        margin: 0px 0px 5%;
+      }
+
+      &:last-child:hover {
+        margin: 5% 0px 0px;
+      }
     }
   }
 
   .imageSide {
-    padding-bottom: 7px;
-
     .card {
       position: relative;
       background-color: $gray-900;
       border-radius: 40px;
-      padding: 48px 44px 31px;
+      padding: 48px 44px 0px;
       display: flex;
       flex-direction: column;
 
@@ -129,15 +108,78 @@
         font-size: 24px;
         line-height: 110%;
         color: $white;
-        max-width: 420px;
         margin: 0 auto;
-
       }
 
       .arrow {
         display: flex;
         justify-content: center;
         padding-right: 13%;
+      }
+
+      .image {
+        width: 100%;
+        height: auto;
+        margin-bottom: -42px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $desktop) {
+  .container {
+    padding-bottom: 42px;;
+    grid-template-columns: 1fr;
+    gap: 32px;
+
+    .list {
+      max-width: 600px;
+      margin: 0 auto;
+
+      .feature {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+
+
+      }
+    }
+
+    .imageSide {
+      max-width: 528px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .container {
+    .list {
+      max-width: 100%;
+    }
+
+    .imageSide {
+      width: 100%;
+      .card {
+        padding: 48px 5px 0px;
+
+        .imageComment {
+          display: inline-block;
+          font-size: clamp(18px, 3vw, 24px);
+          line-height: (28px, 3vw, 110%);
+          margin: 0 auto;
+        }
+
+        .arrow {
+          transform: rotateY(180deg);
+          padding-right: 0px;
+          padding-left: 26px;
+        }
+
+        .image {
+          padding-inline: 24px;
+        }
       }
     }
   }

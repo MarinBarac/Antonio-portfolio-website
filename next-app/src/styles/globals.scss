@@ -20,6 +20,7 @@ body {
   background-color: $black;
   color: $white;
   min-height: 100dvh;
+  overflow: hidden;
 }
 
 main {
@@ -36,4 +37,10 @@ section {
   padding: 96px 24px;
   margin: 0 auto;
   overflow: hidden;
+}
+
+@media screen and (max-width: $tablet) {
+  .content {
+    padding: 64px 24px;
+  }
 }
