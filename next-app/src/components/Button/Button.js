@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import styles from "./Button.module.scss";
 
-const Button = ({ children, styleClass, href, target, type, style }) => {
+const Button = ({ children, styleClass, href, target, type, style, onClick }) => {
   const btnStyles = clsx({
     [styles.container]: true,
     [styles[styleClass]]: !!styleClass,
@@ -15,6 +15,7 @@ const Button = ({ children, styleClass, href, target, type, style }) => {
         type={!!type ? type : "submit"}
         className={btnStyles}
         style={{ ...style }}
+        onClick={onClick}
       >
         {children}
       </button>

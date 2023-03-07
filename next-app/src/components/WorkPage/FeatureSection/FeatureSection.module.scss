@@ -1,52 +1,84 @@
 @import "@/styles/variables.scss";
 
 .container {
+  display: flex;
+  gap: 64px;
+  align-items: flex-start;
+
+  .textSide {
+    flex: 1;
+    min-width: 335px;
     display: flex;
-    gap: 64px;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 32px;
 
-    .textSide {
-        flex: 1;
-        min-width: 335px;
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
+    .buttons {
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      gap: 16px;
+      align-content: center;
+    }
+  }
 
-        .buttons {
-            display: flex;
-            justify-content: flex-start;
-            gap: 16px;
-            align-content: center;
-        }
+  .imageSide {
+    position: relative;
+    flex: 1;
+    max-width: 391px;
+
+    .image {
+      width: 100%;
+      height: auto;
     }
 
-    .imageSide {
-        flex: 1;
-        max-width: 391px;
+    .message {
+      position: absolute;
+      top: 15%;
+      right: 15%;
+      color: $white;
+      background-color: $primary-600;
+      border-radius: 8px;
+      padding: 10px 20px;
+      opacity: 0;
+      transition: 0.3s linear;
 
-        .image {
-            width: 100%;
-            height: auto;
-        }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 70px;
+        bottom: -70px;
+        left: 10%;
+        background-color: transparent;
+        border-left: 1px solid transparent;
+        border-right: 30px solid transparent;
+
+        border-top: 20px solid $primary-600;
+      }
+
+      &.show {
+        opacity: 1;
+      }
     }
+  }
 }
 
 @media screen and (max-width: $tablet) {
-    .container {
-        flex-direction: column;
-        gap: 32px;
+  .container {
+    flex-direction: column;
+    gap: 32px;
 
-        .textSide {
-            min-width: unset;
-            .bottomText {
-                font-size: 18px;
-                line-height: 28px;
-            }
-        }
-
-        .imageSide {
-            width: 100%;
-            max-width: 100%;
-        }
+    .textSide {
+      min-width: unset;
+      .bottomText {
+        font-size: 18px;
+        line-height: 28px;
+      }
     }
+
+    .imageSide {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
 }
