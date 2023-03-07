@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import styles from "./Button.module.scss";
 
-const Button = ({ children, styleClass, href, type, style }) => {
+const Button = ({ children, styleClass, href, target, type, style }) => {
   const btnStyles = clsx({
     [styles.container]: true,
     [styles[styleClass]]: !!styleClass,
@@ -22,7 +22,12 @@ const Button = ({ children, styleClass, href, type, style }) => {
   }
 
   return (
-    <Link href={href} className={btnStyles} style={{ ...style }}>
+    <Link
+      href={href}
+      target={target || "_self"}
+      className={btnStyles}
+      style={{ ...style }}
+    >
       {children}
     </Link>
   );
