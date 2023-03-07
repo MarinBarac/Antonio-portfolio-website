@@ -5,6 +5,11 @@ header {
     grid-template-columns: auto 1fr;
     padding: 0px 112px;
     height: 80px;
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
 }
 
 @media screen and (max-width: $desktop) {
