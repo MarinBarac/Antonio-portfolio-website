@@ -1,0 +1,21 @@
+@import "@/styles/variables.scss";
+
+.container {
+  position: relative;
+  left: 0;
+  transition: 0.1s ease-in;
+
+  &.left {
+    left: -60%;
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .container {
+    width: 100%;
+    
+    &.left {
+      left: 0;
+    }
+  }
+}

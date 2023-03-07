@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import Button from "../Button/Button";
+import UselessButton from "../UselessButton/UselessButton";
 import styles from "./CoffeeChat.module.scss";
 
 const CoffeeChat = () => {
@@ -12,7 +13,7 @@ const CoffeeChat = () => {
           me anything you want to know more about.
         </p>
         <div className={styles.buttons}>
-          <Button styleClass="white-black">Useless button</Button>
+          <UselessButton />
           <Button styleClass="purple">Book 30min call</Button>
         </div>
       </div>
