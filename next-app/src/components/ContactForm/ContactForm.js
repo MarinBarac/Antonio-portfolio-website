@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import Button from "../Button/Button";
-import styles from "./ContactForm.module.scss";
-import FormInput from "./FormInput/FormInput";
+import clsx from "clsx";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import sendEmail from "@/services/mail/sendEmail";
+
+import Button from "../Button/Button";
+import FormInput from "./FormInput/FormInput";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+
+import styles from "./ContactForm.module.scss";
 
 const defaultValues = {
   fullName: "",
@@ -34,7 +37,13 @@ const ContactForm = () => {
     resolver: zodResolver(formSchema),
   });
   const [isSending, setIsSending] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState("");
+
+  const displayMessage = () => {
+    setShowMessage(true);
+    setTimeout(() => setShowMessage(false), 2000);
+  }
 
   const onSubmit = async (data) => {
     setIsSending(true);
@@ -43,15 +52,16 @@ const ContactForm = () => {
       mailData: { ...data },
     });
     setIsSending(false);
-    
+
     setNotificationMessage(
       !!response
         ? "Your message was sent succesfully!"
         : "Ooops! Something went wrong, please try again later."
     );
     reset();
+    displayMessage();
   };
-  
+
   return (
     <section className={styles.section}>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -78,13 +88,16 @@ const ContactForm = () => {
           label="Message"
           control={control}
         />
-        <Button
-          type="submit"
-          styleClass="purple"
-          style={{ width: "100%", justifyContent: "center" }}
-        >
-          {isSending ? <LoadingSpinner /> : 'Send message'}
-        </Button>
+        <div className={styles.submitContainer}>
+          <Button
+            type="submit"
+            styleClass="purple"
+            style={{ width: "100%", justifyContent: "center" }}
+          >
+            {isSending ? <LoadingSpinner /> : "Send message"}
+          </Button>
+          <p className={clsx({[styles.message]: true, [styles.show]: showMessage})}>{notificationMessage}</p>
+        </div>
       </form>
     </section>
   );
