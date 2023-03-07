@@ -50,6 +50,7 @@ const HeroBanner = () => {
               effect="slide"
               speed={2000}
               preventInteractionOnTransition={true}
+              allowTouchMove={false}
               className={styles.swiper}
             >
               {SERVICES.map((service, index) => (
