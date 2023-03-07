@@ -49,6 +49,7 @@ const HeroBanner = () => {
               updateOnWindowResize={true}
               effect="slide"
               speed={2000}
+              preventInteractionOnTransition={true}
               className={styles.swiper}
             >
               {SERVICES.map((service, index) => (
