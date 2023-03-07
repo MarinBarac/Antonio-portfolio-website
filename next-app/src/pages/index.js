@@ -17,11 +17,11 @@ export default function Home() {
         <title>Antonio Vidakovic</title>
       </Head>
       <Layout>
-        <HeroBanner />
-        <About />
-        <Features />
-        <CoffeeChat />
-        <SEO />
+          <HeroBanner />
+          <About />
+          <Features />
+          <CoffeeChat />
+          <SEO />
       </Layout>
     </>
   );
