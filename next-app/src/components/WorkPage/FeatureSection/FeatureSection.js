@@ -13,7 +13,7 @@ const FeatureSection = () => {
 
   useEffect(() => {
     if(showMessage === true) {
-      const timer = setTimeout(() => setShowMessage(false), 10000);
+      const timer = setTimeout(() => setShowMessage(false), 2500);
 
       return () => clearTimeout(timer);
     }
