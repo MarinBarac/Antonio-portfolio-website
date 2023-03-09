@@ -6,18 +6,22 @@ import Image from "next/image";
 import CreativeImage from "@assets/images/creative-work.png";
 
 import styles from "./FeatureSection.module.scss";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useMedia } from "use-media";
 
 const FeatureSection = () => {
-  const [showMessage, setShowMessage] = useState(false);
+  const mobileView = useMedia({ maxWidth: "768px" });
+  const messageRef = useRef();
+  const [showMessage, setShowMessage] = useState(0);
 
   useEffect(() => {
-    if(showMessage === true) {
-      const timer = setTimeout(() => setShowMessage(false), 2500);
+    if (showMessage > 0) {
+      mobileView && messageRef.current.scrollIntoView({ behavior: "smooth" });
+      const timer = setTimeout(() => setShowMessage(0), 2500);
 
       return () => clearTimeout(timer);
     }
-  }, [showMessage])
+  }, [showMessage, mobileView]);
 
   return (
     <section>
@@ -44,9 +48,14 @@ const FeatureSection = () => {
           />
           <div className={styles.buttons}>
             <Button styleClass="purple">Book 30min call</Button>
-            <Button onClick={() => setShowMessage(true)} styleClass="white-black">Don&apos;t book it</Button>
+            <Button
+              onClick={() => setShowMessage((prevState) => prevState + 1)}
+              styleClass="white-black"
+            >
+              Don&apos;t book it
+            </Button>
           </div>
-          <p className={styles.bottomText}>
+          <p className={styles.bottomText} ref={messageRef}>
             If you still want to see some of the work I did, explore case
             studies below.
           </p>
@@ -60,13 +69,13 @@ const FeatureSection = () => {
             className={styles.image}
           />
           <p
-              className={clsx({
-                [styles.message]: true,
-                [styles.show]: showMessage,
-              })}
-            >
-              Alright, I get it. 🙄
-            </p>
+            className={clsx({
+              [styles.message]: true,
+              [styles.show]: showMessage,
+            })}
+          >
+            Alright, I get it. 🙄
+          </p>
         </div>
       </div>
     </section>
