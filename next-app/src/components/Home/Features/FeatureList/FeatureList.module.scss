@@ -58,38 +58,40 @@
         }
       }
 
-      &:hover {
-        width: calc(100% + 48px);
-        cursor: pointer;
-        margin: 5% 0;
-        padding: 24px;
-        left: -24px;
-        background: linear-gradient(97.24deg, #131415 2.04%, #2a1c51 100%);
-        transform: perspective(5000px) translateZ(10px);
-        border: 1px solid $primary-900;
+      @media screen and (min-width: $desktop) {
+        &:hover {
+          width: calc(100% + 48px);
+          cursor: pointer;
+          margin: 5% 0;
+          padding: 24px;
+          left: -24px;
+          background: linear-gradient(97.24deg, #131415 2.04%, #2a1c51 100%);
+          transform: perspective(5000px) translateZ(10px);
+          border: 1px solid $primary-900;
 
-        &::before {
-          left: 10px;
-          bottom: 20px;
-          top: -20px;
-          right: -10px;
-          filter: blur(30px);
+          &::before {
+            left: 10px;
+            bottom: 20px;
+            top: -20px;
+            right: -10px;
+            filter: blur(30px);
+          }
+
+          &::after {
+            left: 24px;
+            bottom: 24px;
+            top: -24px;
+            right: -24px;
+          }
         }
 
-        &::after {
-          left: 24px;
-          bottom: 24px;
-          top: -24px;
-          right: -24px;
+        &:first-child:hover {
+          margin: 0px 0px 5%;
         }
-      }
 
-      &:first-child:hover {
-        margin: 0px 0px 5%;
-      }
-
-      &:last-child:hover {
-        margin: 5% 0px 0px;
+        &:last-child:hover {
+          margin: 5% 0px 0px;
+        }
       }
     }
   }
@@ -128,7 +130,7 @@
 
 @media screen and (max-width: $desktop) {
   .container {
-    padding-bottom: 42px;;
+    padding-bottom: 42px;
     grid-template-columns: 1fr;
     gap: 32px;
 
@@ -141,8 +143,6 @@
         gap: 20px;
         align-items: center;
         text-align: center;
-
-
       }
     }
 
