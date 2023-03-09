@@ -3,14 +3,14 @@ import Glow from "../Glow/Glow";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import Avatar from "@assets/images/Avatar.svg";
+import clsx from "clsx";
+import InteractiveText from "../InteractiveText/InteractiveText";
+import "swiper/css";
+import "swiper/css/autoplay";
 
 import { SERVICES } from "./constants";
 
 import styles from "./HeroBanner.module.scss";
-import "swiper/css";
-import "swiper/css/autoplay";
-import clsx from "clsx";
-import InteractiveText from "../InteractiveText/InteractiveText";
 
 const HeroBanner = () => {
   return (

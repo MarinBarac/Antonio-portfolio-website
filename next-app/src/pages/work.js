@@ -3,10 +3,23 @@ import Layout from "@/components/Layout/Layout";
 import FeatureSection from "@/components/WorkPage/FeatureSection/FeatureSection";
 import CoffeeChat from "@/components/CoffeeChat/CoffeeChat";
 import MyWorkSection from "@/components/MyWork/MyWorkSection";
+import { NextSeo } from "next-seo";
+import useSiteConfig from "@/shared/hooks/useSiteConfig";
 
 const WorkPage = () => {
+  const config = useSiteConfig();
+
   return (
     <>
+      <NextSeo
+        title="Vidakovic design | Work"
+        description="My work..."
+        openGraph={{
+          url: `${config.url}work`,
+          title: "Vidakovic design | Work",
+          description: "My work...",
+        }}
+      />
       <Layout activeTab="work">
         <PageTitle
           title="Work"
