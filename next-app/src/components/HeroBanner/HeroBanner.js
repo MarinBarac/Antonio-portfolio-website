@@ -46,7 +46,7 @@ const HeroBanner = () => {
               spaceBetween={20}
               direction="vertical"
               loop={true}
-              autoplay={{ delay: 1500, disableOnInteraction: false }}
+              autoplay={{ delay: 1000, disableOnInteraction: false }}
               updateOnWindowResize={true}
               effect="slide"
               speed={2000}

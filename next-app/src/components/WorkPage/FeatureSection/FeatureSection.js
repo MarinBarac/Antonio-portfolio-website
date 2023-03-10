@@ -76,7 +76,7 @@ const FeatureSection = () => {
               [styles.show]: showMessage,
             })}
           >
-            Alright, I get it. 🙄
+            Than, don&apos;t.
           </p>
         </div>
       </div>

@@ -11,17 +11,16 @@ const FormInput = ({
   label,
   error,
 }) => {
-
+  const containerClass = clsx({
+    [styles.container]: true,
+    [styles.showError]: error
+  });
+  
   return (
-    <div className={styles.container}>
-      <div className={styles.labelContainer}>
-        <label htmlFor={name} className={styles.label}>
-          {label}
-        </label>
-        <label className={clsx({ [styles.error]: true, [styles.show]: error })}>
-          {error?.message}
-        </label>
-      </div>
+    <div className={containerClass}>
+      <label htmlFor={name} className={styles.label}>
+        {label}
+      </label>
       <Controller
         control={control}
         name={name}
@@ -49,6 +48,9 @@ const FormInput = ({
           );
         }}
       />
+      <label className={styles.error}>
+        {error?.message}
+      </label>
     </div>
   );
 };

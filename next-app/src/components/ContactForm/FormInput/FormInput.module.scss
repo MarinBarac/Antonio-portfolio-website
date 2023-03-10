@@ -3,32 +3,21 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 
-  .labelContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .label,
+  .error {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: $gray-400;
+  }
 
-    .label,
-    .error {
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 20px;
-      color: $gray-400;
-    }
-
-    .error {
-      color: $primary-600;
-      font-weight: 500;
-      letter-spacing: .05em;
-      opacity: 0;
-      transition: all 0.2s;
-
-      &.show {
-        opacity: 1;
-      }
-    }
+  .error {
+    display: none;
+    color: red;
+    font-weight: 400;
+    letter-spacing: 0.05em;
   }
 
   .input {
@@ -67,5 +56,15 @@
       background-color: $primary-600;
       border-radius: 8px;
     }
+  }
+}
+
+.container.showError {
+  .input {
+    border-color: red;
+  }
+
+  .error {
+    display: block;
   }
 }
