@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import BookCallBtn from "../BookCallBtn/BookCallBtn";
 import Button from "../Button/Button";
 import UselessButton from "../UselessButton/UselessButton";
 import styles from "./CoffeeChat.module.scss";
@@ -14,7 +15,7 @@ const CoffeeChat = () => {
         </p>
         <div className={styles.buttons}>
           <UselessButton />
-          <Button styleClass="purple">Book 30min call</Button>
+          <BookCallBtn />
         </div>
       </div>
     </section>

@@ -8,12 +8,14 @@ import CreativeImage from "@assets/images/creative-work.png";
 import styles from "./FeatureSection.module.scss";
 import { useEffect, useRef, useState } from "react";
 import { useMedia } from "use-media";
+import BookCallBtn from "@/components/BookCallBtn/BookCallBtn";
 
 const FeatureSection = () => {
   const mobileView = useMedia({ maxWidth: "768px" });
   const messageRef = useRef();
   const [showMessage, setShowMessage] = useState(0);
-
+  const date = new Date();
+  console.log(date.getMonth());
   useEffect(() => {
     if (showMessage > 0) {
       mobileView && messageRef.current.scrollIntoView({ behavior: "smooth" });
@@ -47,7 +49,7 @@ const FeatureSection = () => {
             }
           />
           <div className={styles.buttons}>
-            <Button styleClass="purple">Book 30min call</Button>
+            <BookCallBtn />
             <Button
               onClick={() => setShowMessage((prevState) => prevState + 1)}
               styleClass="white-black"
