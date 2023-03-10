@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async function (req, res) {
   const { fullName, email, message, mailServiceConfiguration } = req.body;
-
+  require('dotenv').config();
   const transporter = nodemailer.createTransport({
     ...mailServiceConfiguration,
     auth: {
@@ -11,6 +11,7 @@ export default async function (req, res) {
       pass: process.env.EMAIL_PASS,
     },
   });
+  
 
   const mailData = {
     from: process.env.ANTONIO_EMAIL,

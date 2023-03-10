@@ -15,7 +15,7 @@ const FeatureSection = () => {
   const messageRef = useRef();
   const [showMessage, setShowMessage] = useState(0);
   const date = new Date();
-  console.log(date.getMonth());
+  
   useEffect(() => {
     if (showMessage > 0) {
       mobileView && messageRef.current.scrollIntoView({ behavior: "smooth" });

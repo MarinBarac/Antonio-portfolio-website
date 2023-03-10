@@ -11,6 +11,7 @@ const sendEmail = async ({ url, mailData }) => {
     },
     body: JSON.stringify(nodeMailerData),
   });
+  
   if (response.status !== 200) {
     return false;
   }

@@ -52,11 +52,11 @@ const ContactForm = () => {
       mailData: { ...data },
     });
     setIsSending(false);
-
+    
     setNotificationMessage(
       !!response
-        ? "Your message was sent succesfully!"
-        : "Ooops! Something went wrong, please try again later."
+        ? "High five, you managed to an send email!"
+        : "Fuck it. It didn't work. Say thanks to Marin."
     );
     reset();
     displayMessage();
