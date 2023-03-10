@@ -33,6 +33,7 @@ const HeroBanner = () => {
             width={420}
             height={441}
             className={styles.image}
+            priority
           />
         </div>
         <div className={styles.text}>
