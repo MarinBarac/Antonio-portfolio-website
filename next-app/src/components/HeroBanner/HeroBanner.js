@@ -12,8 +12,11 @@ import "swiper/css/autoplay";
 import { SERVICES } from "./constants";
 
 import styles from "./HeroBanner.module.scss";
+import { useMedia } from "use-media";
 
 const HeroBanner = () => {
+  const mobileView = useMedia({ maxWidth: "768px" });
+
   return (
     <section className={styles.section}>
       <div className={clsx("content", styles.container)}>
@@ -24,13 +27,16 @@ const HeroBanner = () => {
               startIndex={3}
               endIndex={4}
             />
-            <Image
-              src={Arrow.src}
-              alt="Arrow"
-              className={styles.arrow}
-              width={Arrow.width}
-              height={Arrow.height}
-            />
+            {!mobileView && (
+              <Image
+                src={Arrow.src}
+                alt="Arrow"
+                className={styles.arrow}
+                width={Arrow.width}
+                height={Arrow.height}
+                priority
+              />
+            )}
           </div>
           <div className={styles.glowContainer}>
             <Glow />

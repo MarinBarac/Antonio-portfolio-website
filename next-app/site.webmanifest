@@ -6,6 +6,7 @@
   "url": "https://vidakovic.design/",
   "ogImage": "https://vidakovic.design/assets/images/og-image.jpg",
   "homepage": "/",
+  "start_url": "https://vidakovic.design/",
   "icons": [
     {
       "src": "./public/assets/icons/favicons/android-chrome-144x144.png",
@@ -15,5 +16,6 @@
   ],
   "theme_color": "#000000",
   "background_color": "#000000",
-  "display": "standalone"
+  "display": "standalone",
+  "prefer_related_applications": false
 }
