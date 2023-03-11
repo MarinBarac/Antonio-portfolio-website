@@ -1,0 +1,19 @@
+{
+  "name": "Vidakovic design",
+  "short_name": "vidaDesign",
+  "title": "Vidakovic design | UI/UX designer",
+  "description": "Passionate UI/UX designer.",
+  "url": "https://vidakovic.design/",
+  "ogImage": "https://vidakovic.design/assets/images/og-image.jpg",
+  "homepage": "/",
+  "icons": [
+    {
+      "src": "./public/assets/icons/favicons/android-chrome-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone"
+}
