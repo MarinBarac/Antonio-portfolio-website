@@ -34,7 +34,6 @@ const HeroBanner = () => {
                 className={styles.arrow}
                 width={Arrow.width}
                 height={Arrow.height}
-                priority
               />
             )}
           </div>

@@ -33,12 +33,19 @@
         color: $white;
         text-align: right;
 
+        @media screen and (min-width: $tablet) {
+          .arrow {
+            display: block;
+            width: 20%;
+            min-width: 80px;
+            height: auto;
+            align-self: center;
+            margin-left: 15%;
+          } 
+        }
+
         .arrow {
-          width: 20%;
-          min-width: 80px;
-          height: auto;
-          align-self: center;
-          margin-left: 15%;
+          display: none;
         }
       }
 
