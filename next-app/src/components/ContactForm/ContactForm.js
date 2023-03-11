@@ -30,6 +30,8 @@ const ContactForm = () => {
   const {
     handleSubmit,
     control,
+    trigger,
+    isSubmitted,
     reset,
     formState: { errors },
   } = useForm({
@@ -71,6 +73,8 @@ const ContactForm = () => {
           type="text"
           placeHolder="Chuck Norris"
           label="Full name"
+          trigger={trigger}
+          formSubmitted={isSubmitted}
           error={errors.fullName}
         />
         <FormInput
@@ -79,6 +83,8 @@ const ContactForm = () => {
           type="text"
           placeHolder="you@company.com"
           label="Email"
+          trigger={trigger}
+          formSubmitted={isSubmitted}
           error={errors.email}
         />
         <FormInput

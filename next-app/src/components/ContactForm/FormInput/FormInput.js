@@ -9,13 +9,25 @@ const FormInput = ({
   type,
   placeHolder,
   label,
+  trigger,
+  formSubmitted,
   error,
 }) => {
   const containerClass = clsx({
     [styles.container]: true,
-    [styles.showError]: error
+    [styles.showError]: error,
   });
-  
+
+  const handleBlur = () => {
+    trigger && trigger(name);
+  };
+
+  const handleChange = () => {
+    if (error && !formSubmitted) {
+      trigger(name);
+    }
+  };
+
   return (
     <div className={containerClass}>
       <label htmlFor={name} className={styles.label}>
@@ -39,18 +51,20 @@ const FormInput = ({
           ) : (
             <input
               type={type}
-              onChange={onChange}
+              onChange={(e) => {
+                handleChange();
+                onChange(e);
+              }}
               value={value}
               placeholder={placeHolder}
               ref={ref}
               className={styles.input}
+              onBlur={handleBlur}
             />
           );
         }}
       />
-      <label className={styles.error}>
-        {error?.message}
-      </label>
+      <label className={styles.error}>{error?.message}</label>
     </div>
   );
 };

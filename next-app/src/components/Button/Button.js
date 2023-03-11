@@ -27,6 +27,7 @@ const Button = ({ children, styleClass, href, target, type, style, onClick }) =>
       href={href}
       target={target || "_self"}
       className={btnStyles}
+      onClick={onClick}
       style={{ ...style }}
     >
       {children}

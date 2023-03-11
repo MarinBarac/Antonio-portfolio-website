@@ -9,7 +9,11 @@ const Navigation = ({ activeTab, show, closeMenu }) => {
   const containerClass = clsx({
     [styles.container]: true,
     [styles.show]: show,
-  })
+  });
+
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = date.getMonth();
 
   return (
     <div className={containerClass}>
@@ -29,7 +33,16 @@ const Navigation = ({ activeTab, show, closeMenu }) => {
           </li>
         ))}
       </ul>
-      <Button styleClass="purple">Book a video call</Button>
+      <Button
+        href={`https://calendly.com/antoniovidakovic/30min?month=${year}-${
+          +month < 10 ? "0" + month : month
+        }`}
+        target="_blank"
+        onClick={closeMenu}
+        styleClass="purple"
+      >
+        Book a video call
+      </Button>
     </div>
   );
 };
