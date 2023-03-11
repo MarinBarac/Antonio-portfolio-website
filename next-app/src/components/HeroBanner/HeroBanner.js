@@ -27,15 +27,13 @@ const HeroBanner = () => {
               startIndex={3}
               endIndex={4}
             />
-            {!mobileView && (
-              <Image
-                src={Arrow.src}
-                alt="Arrow"
-                className={styles.arrow}
-                width={Arrow.width}
-                height={Arrow.height}
-              />
-            )}
+            <Image
+              src={Arrow.src}
+              alt="Arrow"
+              className={styles.arrow}
+              width={Arrow.width}
+              height={Arrow.height}
+            />
           </div>
           <div className={styles.glowContainer}>
             <Glow />
