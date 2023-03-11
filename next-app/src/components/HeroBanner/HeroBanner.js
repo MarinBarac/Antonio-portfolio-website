@@ -5,6 +5,7 @@ import { Autoplay } from "swiper";
 import Avatar from "@assets/images/Avatar.svg";
 import clsx from "clsx";
 import InteractiveText from "../InteractiveText/InteractiveText";
+import Arrow from "@assets/icons/Arrow.svg";
 import "swiper/css";
 import "swiper/css/autoplay";
 
@@ -22,6 +23,13 @@ const HeroBanner = () => {
               text={`"This is not Antonio Vidakovic"`}
               startIndex={3}
               endIndex={4}
+            />
+            <Image
+              src={Arrow.src}
+              alt="Arrow"
+              className={styles.arrow}
+              width={Arrow.width}
+              height={Arrow.height}
             />
           </div>
           <div className={styles.glowContainer}>
