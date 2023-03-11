@@ -44,16 +44,17 @@
     content: "";
     position: absolute;
     border-radius: inherit;
-    inset: 0;
     transition: inherit;
   }
 
   &::before {
+    inset: 0;
     background: $black;
     transform: translateZ(-19px);
   }
 
   &::after {
+    inset: 10px;
     background: $primary-600;
     transform: translateZ(-20px);
   }
