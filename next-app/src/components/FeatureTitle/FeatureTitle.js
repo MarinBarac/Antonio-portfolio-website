@@ -21,7 +21,7 @@ const FeatureTitle = ({
       descriptionStyle === "expandableDescription" &&
         setDescriptionHeight("60px");
     }
-  }, [expanded]);
+  }, [expanded, descriptionStyle]);
 
   return (
     <div className={styles.container}>
