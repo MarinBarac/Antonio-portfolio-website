@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <NextSeo
-        title="Vidakovic design | Home"
+        title="Vidakovic design"
         description="I'm UI/UX designer."
         openGraph={{
           url: config.url,
