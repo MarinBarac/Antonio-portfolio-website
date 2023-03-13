@@ -1,14 +1,15 @@
 import useSiteConfig from "@/shared/hooks/useSiteConfig";
 import OgImage from "@assets/images/og-image.jpg";
-import safariPinnedTab from '@assets/icons/favicons/safari-pinned-tab.svg';
-import appleTouch from '@assets/icons/favicons/apple-touch-icon.png';
-import androidIcon from '@assets/icons/favicons/android-chrome-144x144.png';
-import favicon16 from '@assets/icons/favicons/favicon-16x16.png';
-import favicon32 from '@assets/icons/favicons/favicon-32x32.png';
-import favicon from '@assets/favicon.ico';
+import safariPinnedTab from "@assets/icons/favicons/safari-pinned-tab.svg";
+import appleTouch from "@assets/icons/favicons/apple-touch-icon.png";
+import androidIcon from "@assets/icons/favicons/android-chrome-144x144.png";
+import favicon16 from "@assets/icons/favicons/favicon-16x16.png";
+import favicon32 from "@assets/icons/favicons/favicon-32x32.png";
+import favicon from "@assets/favicon.ico";
 import "@/styles/globals.scss";
 import { DefaultSeo } from "next-seo";
 import Head from "next/head";
+import Script from "next/script";
 
 export default function App({ Component, pageProps }) {
   const config = useSiteConfig();
@@ -35,15 +36,36 @@ export default function App({ Component, pageProps }) {
         <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="format-detection" content="telephone=no" />
-        <meta property="og:image" content="https://vidakovic.design/assets/images/og-image.jpg" />
+        <meta
+          property="og:image"
+          content="https://vidakovic.design/assets/images/og-image.jpg"
+        />
 
         <link rel="mask-icon" href={safariPinnedTab.src} color="#000000" />
         <link rel="icon" href={favicon16.src} type="image/png" sizes="16x16" />
         <link rel="icon" href={favicon32.src} type="image/png" sizes="32x32" />
-        <link rel="icon" href={androidIcon.src} type="image/png" sizes="144x144"/>
+        <link
+          rel="icon"
+          href={androidIcon.src}
+          type="image/png"
+          sizes="144x144"
+        />
         <link rel="shortcut icon" href={favicon.src} />
         <link rel="apple-touch-icon" sizes="180x180" href={appleTouch.src} />
       </Head>
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-D0WMT17P9R"
+      />
+      <Script id="google-analytics" strategy="after-interactive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-D0WMT17P9R');
+        `}
+      </Script>
       <Component {...pageProps} />
     </>
   );
