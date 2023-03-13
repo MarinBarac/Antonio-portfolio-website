@@ -12,12 +12,14 @@ const WorkPage = () => {
   return (
     <>
       <NextSeo
-        title="Vidakovic design | Work"
-        description="My work..."
+        title="Antonio Vidakovic - UX/UI Design Portfolio | Saas Platforms, Web Shops, Marketing Sites, and More"
+        description="Explore my portfolio of UX/UI design work, including projects for Saas platforms, web shops, marketing sites, and more. See how I transform quality user experience flows into user interfaces backed by research and psychology. Contact me to discuss your next project."
         openGraph={{
           url: `${config.url}work`,
-          title: "Vidakovic design | Work",
-          description: "My work...",
+          title:
+            "Antonio Vidakovic - UX/UI Design Portfolio | Saas Platforms, Web Shops, Marketing Sites, and More",
+          description:
+            "Explore my portfolio of UX/UI design work, including projects for Saas platforms, web shops, marketing sites, and more. See how I transform quality user experience flows into user interfaces backed by research and psychology. Contact me to discuss your next project.",
         }}
       />
       <Layout activeTab="work">

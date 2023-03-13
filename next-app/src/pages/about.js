@@ -11,12 +11,13 @@ export default function About() {
   return (
     <>
       <NextSeo
-        title="Vidakovic design | About"
-        description="Passionate UX/UI designer..."
+        title="Experienced UX/UI Designer with a Business Mindset"
+        description="With a bachelor's in Business economics and master's in Marketing and communication, I bring a unique perspective to UX/UI design. My focus is on creating quality experiences and interfaces that solve user problems and improve your product. Contact me to learn more."
         openGraph={{
           url: `${config.url}about`,
-          title: "Vidakovic design | About",
-          description: "Passionate UX/UI designer...",
+          title: "Experienced UX/UI Designer with a Business Mindset",
+          description:
+            "With a bachelor's in Business economics and master's in Marketing and communication, I bring a unique perspective to UX/UI design. My focus is on creating quality experiences and interfaces that solve user problems and improve your product. Contact me to learn more.",
         }}
       />
       <Layout activeTab="about">
