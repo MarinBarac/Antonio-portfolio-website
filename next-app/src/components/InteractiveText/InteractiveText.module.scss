@@ -25,12 +25,14 @@
       z-index: 1;
     }
 
-    &:hover {
-      span {
-        top: -20px;
-        left: -5px;
-        transform-origin: center;
-        transform: rotateZ(-20deg);
+    @media screen and (min-width: $tablet) {
+      &:hover {
+        span {
+          top: -20px;
+          left: -5px;
+          transform-origin: center;
+          transform: rotateZ(-20deg);
+        }
       }
     }
   }
