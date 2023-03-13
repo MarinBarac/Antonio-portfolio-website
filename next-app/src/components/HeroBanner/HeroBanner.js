@@ -15,8 +15,6 @@ import styles from "./HeroBanner.module.scss";
 import { useMedia } from "use-media";
 
 const HeroBanner = () => {
-  const mobileView = useMedia({ maxWidth: "768px" });
-
   return (
     <section className={styles.section}>
       <div className={clsx("content", styles.container)}>
@@ -38,14 +36,15 @@ const HeroBanner = () => {
           <div className={styles.glowContainer}>
             <Glow />
           </div>
-          <Image
-            src={Avatar.src}
-            alt="Avatar"
-            width={420}
-            height={441}
-            className={styles.image}
-            priority
-          />
+          <div className={styles.imageContainer}>
+            <Image
+              src={Avatar.src}
+              alt="Avatar"
+              className={styles.image}
+              fill
+              priority
+            />
+          </div>
         </div>
         <div className={styles.text}>
           Hey there. <span>&#128064;</span>
