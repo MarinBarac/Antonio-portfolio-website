@@ -12,9 +12,13 @@ import "swiper/css/autoplay";
 import { SERVICES } from "./constants";
 
 import styles from "./HeroBanner.module.scss";
-import { useMedia } from "use-media";
+import { useEffect } from "react";
 
 const HeroBanner = () => {
+  useEffect(() => {
+    // reload to solve slider issue on safari
+  }, [])
+
   return (
     <section className={styles.section}>
       <div className={clsx("content", styles.container)}>
@@ -36,15 +40,14 @@ const HeroBanner = () => {
           <div className={styles.glowContainer}>
             <Glow />
           </div>
-          <div className={styles.imageContainer}>
-            <Image
-              src={Avatar.src}
-              alt="Avatar"
-              className={styles.image}
-              fill
-              priority
-            />
-          </div>
+          <Image
+            src={Avatar.src}
+            alt="Avatar"
+            width={420}
+            height={441}
+            className={styles.image}
+            priority
+          />
         </div>
         <div className={styles.text}>
           Hey there. <span>&#128064;</span>
