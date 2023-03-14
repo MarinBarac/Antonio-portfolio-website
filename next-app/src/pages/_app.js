@@ -10,6 +10,7 @@ import "@/styles/globals.scss";
 import { DefaultSeo } from "next-seo";
 import Head from "next/head";
 import Script from "next/script";
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 export default function App({ Component, pageProps }) {
   const config = useSiteConfig();
@@ -54,6 +55,7 @@ export default function App({ Component, pageProps }) {
         <link rel="shortcut icon" href={favicon.src} />
         <link rel="apple-touch-icon" sizes="180x180" href={appleTouch.src} />
       </Head>
+      <GoogleAnalytics gaMeasurementId="G-D0WMT17P9R"/>
       <Component {...pageProps} />
     </>
   );
