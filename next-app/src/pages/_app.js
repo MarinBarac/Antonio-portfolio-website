@@ -13,6 +13,7 @@ import Script from "next/script";
 
 export default function App({ Component, pageProps }) {
   const config = useSiteConfig();
+
   return (
     <>
       <DefaultSeo
@@ -53,19 +54,6 @@ export default function App({ Component, pageProps }) {
         <link rel="shortcut icon" href={favicon.src} />
         <link rel="apple-touch-icon" sizes="180x180" href={appleTouch.src} />
       </Head>
-      <Script
-        strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-D0WMT17P9R"
-      />
-      <Script id="google-analytics" strategy="after-interactive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'G-D0WMT17P9R');
-        `}
-      </Script>
       <Component {...pageProps} />
     </>
   );
