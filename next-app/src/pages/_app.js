@@ -9,40 +9,9 @@ import favicon from "@assets/favicon.ico";
 import "@/styles/globals.scss";
 import { DefaultSeo } from "next-seo";
 import Head from "next/head";
-import Script from "next/script";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
-
-const GA_MEASUREMENT_ID = "G-D0WMT17P9R";
-
-const pageView = (url) => {
-  window.gtag("config", GA_MEASUREMENT_ID, {
-    page_path: url,
-  });
-};
-
-const event = ({ action, category, label, value }) => {
-  window.gtag("event", action, {
-    event_category: category,
-    event_label: label,
-    value,
-  });
-};
 
 export default function App({ Component, pageProps }) {
-  const router = useRouter();
   const config = useSiteConfig();
-
-  useEffect(() => {
-    const handleRouteChange = (url) => {
-      pageView(url);
-    };
-
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
 
   return (
     <>
@@ -83,24 +52,18 @@ export default function App({ Component, pageProps }) {
         />
         <link rel="shortcut icon" href={favicon.src} />
         <link rel="apple-touch-icon" sizes="180x180" href={appleTouch.src} />
-      </Head>
-      <Script
-        strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-D0WMT17P9R"
-      />
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `window.dataLayer = window.dataLayer || [];
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-D0WMT17P9R"
+        ></script>
+        <script>
+          {`window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-D0WMT17P9R', {
-    page_path: window.location.pathname,
-  });`,
-        }}
-      />
+  gtag('config', 'G-D0WMT17P9R');`}
+        </script>
+      </Head>
       <Component {...pageProps} />
     </>
   );
