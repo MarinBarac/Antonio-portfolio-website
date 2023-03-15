@@ -6,7 +6,6 @@ import Layout from "@/components/Layout/Layout";
 import SEO from "@/components/SEO/SEO";
 import useSiteConfig from "@/shared/hooks/useSiteConfig";
 import { NextSeo } from "next-seo";
-import Script from "next/script";
 
 export default function Home() {
   const config = useSiteConfig();
