@@ -36,6 +36,7 @@ export default function App({ Component, pageProps }) {
         <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="format-detection" content="telephone=no" />
+        <meta property="og:site_name" content="Antonio Vidakovic" />
         <meta
           property="og:image"
           content="https://vidakovic.design/assets/images/og-image.jpg"
