@@ -7,11 +7,36 @@ import favicon16 from "@assets/icons/favicons/favicon-16x16.png";
 import favicon32 from "@assets/icons/favicons/favicon-32x32.png";
 import favicon from "@assets/favicon.ico";
 import "@/styles/globals.scss";
+import { useEffect } from "react";
+import TagManager from "react-gtm-module";
 import { DefaultSeo } from "next-seo";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
   const config = useSiteConfig();
+
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'AW-11119722550' });
+  }, []);
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      TagManager.dataLayer({
+        dataLayer: {
+          page: url,
+        },
+        dataLayerName: 'PageDataLayer',
+      });
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <>
